@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>article-web</title>
+    <script type="module" crossorigin src="/assets/index-DQJ74WBV.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BTbvp4Sz.css">
+  </head>
+  <body>
+    <!-- Global display for ANY hidden errors -->
+    <div id="error-display" style="color: red; padding: 20px; font-family: monospace; font-size: 16px; width: 100vw; height: 100vh; background: black; z-index: 99999; display: none;"></div>
+    
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        document.getElementById('error-display').style.display = 'block';
+        document.getElementById('error-display').innerHTML += '<p>🛑 ERROR: ' + message + '</p>';
+        return false;
+      };
+      // Fallback for unhandled module promise errors
+      window.addEventListener('unhandledrejection', function(event) {
+        document.getElementById('error-display').style.display = 'block';
+        document.getElementById('error-display').innerHTML += '<p>🔥 PROMISE ERROR: ' + event.reason + '</p>';
+      });
+    </script>
+    
+    <div id="root"></div>
+  </body>
+</html>
